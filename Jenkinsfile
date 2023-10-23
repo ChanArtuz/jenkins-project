@@ -27,7 +27,7 @@ pipeline {
             emailext (
                 subject: "Build Failed",
                 body: "The build has failed. Please check the Jenkins build log.",
-                recipientProviders: [[$class: 'CulpritRecipientProvider']],
+                recipientProviders: [[$class: 'CulpritsRecipientProvider']],
                 to: 'jartuz@77global.biz'
             )
         }
@@ -35,7 +35,7 @@ pipeline {
             emailext (
                 subject: "Build Failed",
                 body: "The build has completed successfully.",
-                recipientProviders: [[$class: 'CulpritRecipientProvider']],
+                recipientProviders: [[$class: 'CulpritsRecipientProvider']],
                 to: 'jartuz@77global.biz'
             )
         }
