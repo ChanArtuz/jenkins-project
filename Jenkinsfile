@@ -22,4 +22,22 @@ pipeline {
             }
         }
     }
+    post {
+        failure {
+            emailext {
+                subject: "Build Failed",
+                body: "The build has failed. Please check the Jenkins build log.",
+                recipientProviders: [[$class: 'CulpritRecipientProvider']],
+                to: 'jartuz@77global.biz'
+            }
+        }
+        success {
+            emailext {
+                subject: "Build Failed",
+                body: "The build has completed successfully.",
+                recipientProviders: [[$class: 'CulpritRecipientProvider']],
+                to: 'jartuz@77global.biz'
+            }
+        }
+    }
 }
