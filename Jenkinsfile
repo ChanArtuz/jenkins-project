@@ -1,9 +1,14 @@
 pipeline {
     agent any 
+    tools {
+        maven 'Maven'
+    }
     stages {
         stage('Checkout') { 
             steps {
-                
+                script {
+                    checkout scm
+                }
             }
         }
         stage('Build') { 
