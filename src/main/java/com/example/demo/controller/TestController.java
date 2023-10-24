@@ -9,6 +9,6 @@ public class TestController {
 	
 	@GetMapping("/getSquaredValue/{valueToSquare}")
 	long getSquaredValue(@PathVariable("valueToSquare") Long valueToSquare) {
-		return valueToSquare*valueToSquare+10;
+		return valueToSquare*valueToSquare;
 	}
 }
